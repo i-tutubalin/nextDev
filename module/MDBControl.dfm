@@ -1,5 +1,6 @@
 object ModuleDBControl: TModuleDBControl
   OldCreateOrder = True
+  OnCreate = DataModuleCreate
   Height = 404
   Width = 538
   object DSDev: TDataSource
@@ -8,10 +9,6 @@ object ModuleDBControl: TModuleDBControl
     Top = 160
   end
   object ConDBNextDev: TADOConnection
-    Connected = True
-    ConnectionString = 
-      'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=E:\Next Dev\'#1041#1044'\Data' +
-      'base1.mdb;Persist Security Info=False'
     LoginPrompt = False
     Mode = cmShareDenyNone
     Provider = 'Microsoft.Jet.OLEDB.4.0'
@@ -19,7 +16,6 @@ object ModuleDBControl: TModuleDBControl
     Top = 16
   end
   object QueryTask: TADOQuery
-    Active = True
     Connection = ConDBNextDev
     CursorType = ctStatic
     Parameters = <>
@@ -28,7 +24,7 @@ object ModuleDBControl: TModuleDBControl
       '   t.*'
       'From'
       '   task t')
-    Left = 96
+    Left = 80
     Top = 88
     object QueryTaskid: TAutoIncField
       FieldName = 'id'
@@ -66,11 +62,10 @@ object ModuleDBControl: TModuleDBControl
   end
   object DSTask: TDataSource
     DataSet = QueryTask
-    Left = 96
+    Left = 80
     Top = 160
   end
   object QueryDev: TADOQuery
-    Active = True
     Connection = ConDBNextDev
     CursorType = ctStatic
     Parameters = <>
@@ -80,7 +75,7 @@ object ModuleDBControl: TModuleDBControl
       'From'
       '   dev d')
     Left = 16
-    Top = 96
+    Top = 88
     object QueryDevid: TAutoIncField
       FieldName = 'id'
       ReadOnly = True
@@ -99,7 +94,6 @@ object ModuleDBControl: TModuleDBControl
     end
   end
   object QueryRec: TADOQuery
-    Active = True
     Connection = ConDBNextDev
     CursorType = ctStatic
     Parameters = <>
@@ -109,7 +103,7 @@ object ModuleDBControl: TModuleDBControl
       'From'
       '   record r'
       '')
-    Left = 160
+    Left = 144
     Top = 88
     object QueryRecid: TAutoIncField
       FieldName = 'id'
@@ -133,7 +127,7 @@ object ModuleDBControl: TModuleDBControl
   end
   object DataSource1: TDataSource
     DataSet = QueryRec
-    Left = 160
+    Left = 144
     Top = 160
   end
 end

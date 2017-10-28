@@ -44,12 +44,14 @@ type
     cxBtDeleteRecord: TcxButton;
     refresh1: TMenuItem;
     refresh2: TMenuItem;
+    Label1: TLabel;
     procedure CBSortStatusChange(Sender: TObject);
     procedure DBEditRelationsTableDevAndTaskChange(Sender: TObject);
     procedure cxBtAddRecordClick(Sender: TObject);
     procedure cxBtEditRecordClick(Sender: TObject);
     procedure cxBtDeleteRecordClick(Sender: TObject);
     procedure refreshClick(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -58,7 +60,7 @@ type
 
 implementation
 
-uses MDBControl, UDeleteTask, UNewTask, MImg;
+uses MDBControl, UDeleteTask, UNewTask, MImg, UMain;
 
 {$R *.dfm}
 
@@ -119,6 +121,11 @@ begin
     Open;
   end;
 
+end;
+
+procedure TFrameMainTask.Label1Click(Sender: TObject);
+begin
+  Label1.Caption:=FormMain.path;
 end;
 
 procedure TFrameMainTask.refreshClick(Sender: TObject);

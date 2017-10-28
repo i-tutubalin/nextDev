@@ -21,14 +21,20 @@ object FrameMainTask: TFrameMainTask
     Height = 153
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = 1
-    ExplicitTop = -5
     object LbSortStatus: TLabel
       Left = 115
       Top = 10
       Width = 53
       Height = 13
       Caption = 'Sort status'
+    end
+    object Label1: TLabel
+      Left = 256
+      Top = 80
+      Width = 31
+      Height = 13
+      Caption = 'Label1'
+      OnClick = Label1Click
     end
     object CBSortStatus: TComboBox
       Left = 115

@@ -31,9 +31,11 @@ type
     cxUser: TcxTabSheet;
     FrameMainTask: TFrameMainTask;
     procedure refresh1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
+    path:string;
     { Public declarations }
   end;
 
@@ -45,6 +47,11 @@ implementation
 uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg;
 
 {$R *.dfm}
+procedure TFormMain.FormCreate(Sender: TObject);
+begin
+  path:= ExtractFilePath(Application.ExeName);
+end;
+
 procedure TFormMain.refresh1Click(Sender: TObject);
 begin
   //намнбкемхе ад

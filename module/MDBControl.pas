@@ -32,6 +32,7 @@ type
     QueryRecrecord: TWideStringField;
     QueryRecidDev: TIntegerField;
     QueryRecnameDev: TWideStringField;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +44,27 @@ var
 
 implementation
 
+uses UMain;
+
 {$R *.dfm}
+
+procedure TModuleDBControl.DataModuleCreate(Sender: TObject);
+begin
+  //ондйкчвемхе й ад
+  QueryDev.Active:=false;
+  QueryTask.Active:=false;
+  QueryRec.Active:=false;
+
+  ConDBNextDev.Connected:=false;
+  ConDBNextDev.ConnectionString:=
+    'Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source='+
+    FormMain.path+'ад\Database1.mdb;'+
+    'Mode=Share Deny None;Jet OLEDB:SFP=False;';
+  ConDBNextDev.Connected:=true;
+
+  QueryDev.Active:=true;
+  QueryTask.Active:=true;
+  QueryRec.Active:=true;
+end;
 
 end.
