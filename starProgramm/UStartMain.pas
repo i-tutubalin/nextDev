@@ -33,7 +33,9 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cxBtReadPasswordClick(Sender: TObject);
+    procedure EditReadPasswordKeyPress(Sender: TObject; var Key: Char);
   private
+    tempPassword:String;
     { Private declarations }
   public
     { Public declarations }
@@ -62,7 +64,7 @@ begin
     if  EditReadLogin.Text = DBCBReadLogin.items[i] then
       login := true
     else login := false;
-    if EditReadPassword.Text = DBCBReadPassword.Items[i] then
+    if tempPassword = DBCBReadPassword.Items[i] then
       password := true
     else password := false;
     if login and password then
@@ -79,6 +81,14 @@ begin
     end;
   end;
   EditReadPassword.Text := '';
+  tempPassword:='';
+end;
+
+procedure TFormStartMain.EditReadPasswordKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  tempPassword:=tempPassword+key;
+  key:='*';
 end;
 
 procedure TFormStartMain.FormClose(Sender: TObject; var Action: TCloseAction);

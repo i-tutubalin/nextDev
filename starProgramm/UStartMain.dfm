@@ -31,6 +31,7 @@ object FormStartMain: TFormStartMain
     Width = 250
     Height = 31
     TabOrder = 0
+    OnKeyPress = EditReadPasswordKeyPress
   end
   object EditReadLogin: TEdit
     Left = 100

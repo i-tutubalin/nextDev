@@ -47,6 +47,7 @@ object FormDeleteTask: TFormDeleteTask
       Align = alLeft
       TabOrder = 0
       Text = 'EditReadPassword'
+      OnKeyPress = EditReadPasswordKeyPress
       ExplicitHeight = 21
     end
     object cxBtReadPassword: TcxButton

@@ -30,7 +30,9 @@ type
     cxBtReadPassword: TcxButton;
     procedure FormShow(Sender: TObject);
     procedure cxBtReadPasswordClick(Sender: TObject);
+    procedure EditReadPasswordKeyPress(Sender: TObject; var Key: Char);
   private
+    tempPassword:String;
     { Private declarations }
   public
     { Public declarations }
@@ -51,7 +53,7 @@ var
 begin
   //ÓÄÀËßÅÒ ÂÛÁĞÀÍÓŞ ÇÀÏÈÑÜ ÏĞÈ ÏĞÀÂÈËÜÍÎÌ ÂÂÅÄÅÍÈÈ ÏÀĞÎËß
   passworld := 'ïàğîëü';
-  if EditReadPassword.Text = passworld then
+  if tempPassword = passworld then
   begin
     ModuleDBControl.QueryTask.Delete;
     FormDeleteTask.Close;
@@ -59,9 +61,17 @@ begin
   else
   begin
     EditReadPassword.Text := '';
+    tempPassword:='';
     LbReadPassworld.Font.Color := clRed;
     LbReadPassworld.Caption := 'Wrong password. Try again.';
   end;
+end;
+
+procedure TFormDeleteTask.EditReadPasswordKeyPress(Sender: TObject;
+  var Key: Char);
+begin
+  tempPassword:=tempPassword+key;
+  key:='*';
 end;
 
 procedure TFormDeleteTask.FormShow(Sender: TObject);
