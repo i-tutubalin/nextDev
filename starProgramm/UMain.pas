@@ -49,6 +49,7 @@ uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg;
 {$R *.dfm}
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
+  //осярэ й й депейрнпхх опнейрю
   path:= ExtractFilePath(Application.ExeName);
 end;
 

@@ -28,14 +28,6 @@ object FrameMainTask: TFrameMainTask
       Height = 13
       Caption = 'Sort status'
     end
-    object Label1: TLabel
-      Left = 256
-      Top = 80
-      Width = 31
-      Height = 13
-      Caption = 'Label1'
-      OnClick = Label1Click
-    end
     object CBSortStatus: TComboBox
       Left = 115
       Top = 25
