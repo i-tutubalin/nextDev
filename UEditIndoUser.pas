@@ -1,9 +1,9 @@
-unit FMainUser;
+unit UEditIndoUser;
 
 interface
 
 uses
-  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, 
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters, Menus,
   dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinBlueprint, dxSkinCaramel,
   dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinDevExpressDarkStyle,
@@ -22,28 +22,27 @@ uses
   dxSkinXmas2008Blue, StdCtrls, cxButtons;
 
 type
-  TFrameMainUser = class(TFrame)
+  TFormEditInfoUser = class(TForm)
+    EditDev: TEdit;
+    EditLogin: TEdit;
     LbName: TLabel;
     LbLogin: TLabel;
     cxBtEditInfoUser: TcxButton;
-    LbLoginUser: TLabel;
-    LbNameUser: TLabel;
-    procedure cxBtEditInfoUserClick(Sender: TObject);
+    EditNewPassword: TEdit;
+    LbNewPassword: TLabel;
+    EditRepeatNewPassword: TEdit;
+    LbRepeatNewPassword: TLabel;
   private
     { Private declarations }
   public
     { Public declarations }
   end;
 
+var
+  FormEditInfoUser: TFormEditInfoUser;
+
 implementation
 
-uses UEditIndoUser;
-
 {$R *.dfm}
-
-procedure TFrameMainUser.cxBtEditInfoUserClick(Sender: TObject);
-begin
-  FormEditInfoUser.Show;
-end;
 
 end.

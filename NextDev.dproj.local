@@ -86,6 +86,8 @@
     <Transaction>2017.10.27 21:45:04.565.dfm,E:\Next Dev\UNewTask.dfm=E:\Next Dev\task\UNewTask.dfm</Transaction>
     <Transaction>2017.10.29 13:51:00.865.pas,E:\Документы\nextDev.git\Unit1.pas=E:\Документы\nextDev.git\FMainUser.pas</Transaction>
     <Transaction>2017.10.29 13:51:00.865.dfm,E:\Документы\nextDev.git\Unit1.dfm=E:\Документы\nextDev.git\FMainUser.dfm</Transaction>
+    <Transaction>2017.10.29 20:44:36.592.pas,E:\Документы\nextDev.git\Unit1.pas=E:\Документы\nextDev.git\UEditIndoUser.pas</Transaction>
+    <Transaction>2017.10.29 20:44:36.592.dfm,E:\Документы\nextDev.git\Unit1.dfm=E:\Документы\nextDev.git\UEditIndoUser.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="module"/>
@@ -113,5 +115,7 @@
     <File Path="UDownload.dfm"/>
     <File Path="FMainUser.pas"/>
     <File Path="FMainUser.dfm"/>
+    <File Path="UEditIndoUser.pas"/>
+    <File Path="UEditIndoUser.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>
