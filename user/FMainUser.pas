@@ -39,7 +39,7 @@ type
 
 implementation
 
-uses UEditIndoUser, UStartMain, MDBControl;
+uses UEditIndoUser, UStartMain, MDBControl, MImg;
 
 {$R *.dfm}
 

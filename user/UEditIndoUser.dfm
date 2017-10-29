@@ -88,6 +88,8 @@ object FormEditInfoUser: TFormEditInfoUser
     Caption = 'Edit information user'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'DevExpressStyle'
+    OptionsImage.ImageIndex = 0
+    OptionsImage.Images = ModuleImg.ImageListCommon
     TabOrder = 2
     OnClick = cxBtEditInfoUserClick
   end

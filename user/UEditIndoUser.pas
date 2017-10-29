@@ -49,7 +49,7 @@ var
 
 implementation
 
-uses FMainUser, UMain, UStartMain;
+uses FMainUser, UMain, UStartMain, MImg;
 
 {$R *.dfm}
 

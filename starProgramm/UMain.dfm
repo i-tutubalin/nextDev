@@ -48,7 +48,7 @@ object FormMain: TFormMain
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
-      ImageIndex = 0
+      ImageIndex = 2
       ParentFont = False
       inline FrameMainTask: TFrameMainTask
         Left = 0
@@ -135,7 +135,7 @@ object FormMain: TFormMain
     end
     object cxUser: TcxTabSheet
       Caption = 'User'
-      ImageIndex = 2
+      ImageIndex = 0
       OnShow = cxUserShow
       inline FrameMainUser: TFrameMainUser
         Left = 0
