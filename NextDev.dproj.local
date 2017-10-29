@@ -88,6 +88,10 @@
     <Transaction>2017.10.29 13:51:00.865.dfm,E:\Документы\nextDev.git\Unit1.dfm=E:\Документы\nextDev.git\FMainUser.dfm</Transaction>
     <Transaction>2017.10.29 20:44:36.592.pas,E:\Документы\nextDev.git\Unit1.pas=E:\Документы\nextDev.git\UEditIndoUser.pas</Transaction>
     <Transaction>2017.10.29 20:44:36.592.dfm,E:\Документы\nextDev.git\Unit1.dfm=E:\Документы\nextDev.git\UEditIndoUser.dfm</Transaction>
+    <Transaction>2017.10.29 21:02:35.088.pas,E:\Документы\nextDev.git\UEditIndoUser.pas=E:\Документы\nextDev.git\user\UEditIndoUser.pas</Transaction>
+    <Transaction>2017.10.29 21:02:35.089.dfm,E:\Документы\nextDev.git\UEditIndoUser.dfm=E:\Документы\nextDev.git\user\UEditIndoUser.dfm</Transaction>
+    <Transaction>2017.10.29 21:02:42.696.pas,E:\Документы\nextDev.git\FMainUser.pas=E:\Документы\nextDev.git\user\FMainUser.pas</Transaction>
+    <Transaction>2017.10.29 21:02:42.696.dfm,E:\Документы\nextDev.git\FMainUser.dfm=E:\Документы\nextDev.git\user\FMainUser.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="module"/>
@@ -107,15 +111,16 @@
     <File Path="task\UDeleteTask.dfm"/>
     <File Path="task\UNewTask.pas"/>
     <File Path="task\UNewTask.dfm"/>
+    <File Path="user"/>
+    <File Path="user\UEditIndoUser.pas"/>
+    <File Path="user\UEditIndoUser.dfm"/>
+    <File Path="user\FMainUser.pas"/>
+    <File Path="user\FMainUser.dfm"/>
     <File Path="FRecordDev.pas"/>
     <File Path="FRecordDev.dfm"/>
     <File Path="FRecordTask.pas"/>
     <File Path="FRecordTask.dfm"/>
     <File Path="UDownload.pas"/>
     <File Path="UDownload.dfm"/>
-    <File Path="FMainUser.pas"/>
-    <File Path="FMainUser.dfm"/>
-    <File Path="UEditIndoUser.pas"/>
-    <File Path="UEditIndoUser.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

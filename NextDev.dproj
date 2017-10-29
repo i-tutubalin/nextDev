@@ -79,11 +79,11 @@
 				<Form>ModuleImg</Form>
 				<DesignClass>TDataModule</DesignClass>
 			</DCCReference>
-			<DCCReference Include="FMainUser.pas">
+			<DCCReference Include="user\FMainUser.pas">
 				<Form>FrameMainUser</Form>
 				<DesignClass>TFrame</DesignClass>
 			</DCCReference>
-			<DCCReference Include="UEditIndoUser.pas">
+			<DCCReference Include="user\UEditIndoUser.pas">
 				<Form>FormEditInfoUser</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Base">

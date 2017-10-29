@@ -12,8 +12,8 @@ uses
   UStartMain in 'starProgramm\UStartMain.pas' {FormStartMain},
   FMainTask in 'task\FMainTask.pas' {FrameMainTask: TFrame},
   MImg in 'module\MImg.pas' {ModuleImg: TDataModule},
-  FMainUser in 'FMainUser.pas' {FrameMainUser: TFrame},
-  UEditIndoUser in 'UEditIndoUser.pas' {FormEditInfoUser};
+  FMainUser in 'user\FMainUser.pas' {FrameMainUser: TFrame},
+  UEditIndoUser in 'user\UEditIndoUser.pas' {FormEditInfoUser};
 
 {$R *.res}
 

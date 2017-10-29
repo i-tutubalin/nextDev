@@ -29,7 +29,7 @@ object FormMain: TFormMain
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    Properties.ActivePage = cxUser
+    Properties.ActivePage = cxMainTask
     Properties.CustomButtons.Buttons = <>
     Properties.Images = ModuleImg.ImageListMainMenu
     Properties.Rotate = True
@@ -132,6 +132,10 @@ object FormMain: TFormMain
     object cxRecord: TcxTabSheet
       Caption = 'Record'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object cxUser: TcxTabSheet
       Caption = 'User'
@@ -143,8 +147,32 @@ object FormMain: TFormMain
         Height = 792
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 95
-        ExplicitTop = 152
+        ExplicitWidth = 1135
+        ExplicitHeight = 792
+        inherited LbName: TLabel
+          Width = 41
+          Height = 19
+          ExplicitWidth = 41
+          ExplicitHeight = 19
+        end
+        inherited LbLogin: TLabel
+          Width = 39
+          Height = 19
+          ExplicitWidth = 39
+          ExplicitHeight = 19
+        end
+        inherited LbLoginUser: TLabel
+          Width = 74
+          Height = 19
+          ExplicitWidth = 74
+          ExplicitHeight = 19
+        end
+        inherited LbNameUser: TLabel
+          Width = 76
+          Height = 19
+          ExplicitWidth = 76
+          ExplicitHeight = 19
+        end
       end
     end
   end
