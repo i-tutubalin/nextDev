@@ -29,7 +29,7 @@ object FormMain: TFormMain
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    Properties.ActivePage = cxRecord
+    Properties.ActivePage = cxMainTask
     Properties.CustomButtons.Buttons = <>
     Properties.Images = ModuleImg.ImageListMainMenu
     Properties.Rotate = True
