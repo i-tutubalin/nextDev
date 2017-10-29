@@ -11,7 +11,9 @@ uses
   UDeleteTask in 'task\UDeleteTask.pas' {FormDeleteTask},
   UStartMain in 'starProgramm\UStartMain.pas' {FormStartMain},
   FMainTask in 'task\FMainTask.pas' {FrameMainTask: TFrame},
-  MImg in 'module\MImg.pas' {ModuleImg: TDataModule};
+  MImg in 'module\MImg.pas' {ModuleImg: TDataModule},
+  FMainUser in 'user\FMainUser.pas' {FrameMainUser: TFrame},
+  UEditIndoUser in 'user\UEditIndoUser.pas' {FormEditInfoUser};
 
 {$R *.res}
 
@@ -25,5 +27,6 @@ begin
   Application.CreateForm(TFormDeleteTask, FormDeleteTask);
   Application.CreateForm(TFormStartMain, FormStartMain);
   Application.CreateForm(TModuleImg, ModuleImg);
+  Application.CreateForm(TFormEditInfoUser, FormEditInfoUser);
   Application.Run;
 end.

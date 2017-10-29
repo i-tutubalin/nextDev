@@ -29,7 +29,7 @@ object FormMain: TFormMain
     Font.Style = []
     ParentFont = False
     TabOrder = 0
-    Properties.ActivePage = cxMainTask
+    Properties.ActivePage = cxRecord
     Properties.CustomButtons.Buttons = <>
     Properties.Images = ModuleImg.ImageListMainMenu
     Properties.Rotate = True
@@ -48,7 +48,7 @@ object FormMain: TFormMain
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
-      ImageIndex = 2
+      ImageIndex = 0
       ParentFont = False
       inline FrameMainTask: TFrameMainTask
         Left = 0
@@ -135,7 +135,54 @@ object FormMain: TFormMain
     end
     object cxUser: TcxTabSheet
       Caption = 'User'
-      ImageIndex = 0
+      ImageIndex = 2
+      OnShow = cxUserShow
+      inline FrameMainUser: TFrameMainUser
+        Left = 0
+        Top = 0
+        Width = 1135
+        Height = 792
+        Align = alClient
+        TabOrder = 0
+        ExplicitWidth = 1135
+        ExplicitHeight = 792
+        inherited LbName: TLabel
+          Width = 41
+          Height = 19
+          ExplicitWidth = 41
+          ExplicitHeight = 19
+        end
+        inherited LbLogin: TLabel
+          Width = 39
+          Height = 19
+          ExplicitWidth = 39
+          ExplicitHeight = 19
+        end
+        inherited LbIDUser: TLabel
+          Width = 66
+          Height = 19
+          ExplicitWidth = 66
+          ExplicitHeight = 19
+        end
+        inherited LbLoginUser: TLabel
+          Width = 88
+          Height = 19
+          ExplicitWidth = 88
+          ExplicitHeight = 19
+        end
+        inherited LbNameUser: TLabel
+          Width = 90
+          Height = 19
+          ExplicitWidth = 90
+          ExplicitHeight = 19
+        end
+        inherited LbPasswordUser: TLabel
+          Width = 116
+          Height = 19
+          ExplicitWidth = 116
+          ExplicitHeight = 19
+        end
+      end
     end
   end
 end
