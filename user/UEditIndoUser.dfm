@@ -12,6 +12,7 @@ object FormEditInfoUser: TFormEditInfoUser
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object LbName: TLabel
@@ -42,6 +43,27 @@ object FormEditInfoUser: TFormEditInfoUser
     Height = 13
     Caption = 'Repeat new password'
   end
+  object LbOldPassword: TLabel
+    Left = 56
+    Top = 248
+    Width = 111
+    Height = 13
+    Caption = 'Enter the old password'
+  end
+  object LbIncorrectPassword: TLabel
+    Left = 183
+    Top = 276
+    Width = 93
+    Height = 13
+    Caption = 'Incorrect password'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
   object EditDev: TEdit
     Left = 56
     Top = 43
@@ -60,13 +82,14 @@ object FormEditInfoUser: TFormEditInfoUser
   end
   object cxBtEditInfoUser: TcxButton
     Left = 56
-    Top = 264
+    Top = 295
     Width = 121
     Height = 25
     Caption = 'Edit information user'
     LookAndFeel.NativeStyle = False
     LookAndFeel.SkinName = 'DevExpressStyle'
     TabOrder = 2
+    OnClick = cxBtEditInfoUserClick
   end
   object EditNewPassword: TEdit
     Left = 58
@@ -74,7 +97,6 @@ object FormEditInfoUser: TFormEditInfoUser
     Width = 121
     Height = 21
     TabOrder = 3
-    Text = 'EditNewPassword'
   end
   object EditRepeatNewPassword: TEdit
     Left = 58
@@ -82,6 +104,21 @@ object FormEditInfoUser: TFormEditInfoUser
     Width = 121
     Height = 21
     TabOrder = 4
-    Text = 'EditRepeatNewPassword'
+  end
+  object EditOldPassword: TEdit
+    Left = 56
+    Top = 268
+    Width = 121
+    Height = 21
+    TabOrder = 5
+  end
+  object EditPasswordUser: TEdit
+    Left = 0
+    Top = 268
+    Width = 50
+    Height = 21
+    TabOrder = 6
+    Text = 'EditPasswordUser'
+    Visible = False
   end
 end

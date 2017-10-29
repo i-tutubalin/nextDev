@@ -32,6 +32,12 @@ type
     LbNewPassword: TLabel;
     EditRepeatNewPassword: TEdit;
     LbRepeatNewPassword: TLabel;
+    LbOldPassword: TLabel;
+    EditOldPassword: TEdit;
+    LbIncorrectPassword: TLabel;
+    EditPasswordUser: TEdit;
+    procedure FormShow(Sender: TObject);
+    procedure cxBtEditInfoUserClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +49,28 @@ var
 
 implementation
 
+uses FMainUser, UMain, UStartMain;
+
 {$R *.dfm}
+
+procedure TFormEditInfoUser.cxBtEditInfoUserClick(Sender: TObject);
+begin
+  if EditOldPassword.Text = EditPasswordUser.Text then
+  begin
+    FormEditInfoUser.Close;
+  end
+  else
+  begin
+    LbIncorrectPassword.Visible := true;
+  end;
+end;
+
+procedure TFormEditInfoUser.FormShow(Sender: TObject);
+begin
+  //«¿œŒÀÕﬂ≈Ã »Õ‘Œ–Ã¿÷»ﬁ Œ œŒÀ‹«Œ¬¿“≈À≈
+  EditLogin.text:=FormStartMain.DBCBReadLogin.Items[StrToInt(FormStartMain.IdUser)];
+  EditDev.text:=FormStartMain.DBCBName.Items[StrToInt(FormStartMain.IdUser)];
+  EditPasswordUser.Text:=FormStartMain.DBCBReadPassword.Items[StrToInt(FormStartMain.IdUser)];
+end;
 
 end.
