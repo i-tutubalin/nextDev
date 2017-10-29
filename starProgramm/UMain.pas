@@ -34,6 +34,7 @@ type
     FrameMainUser: TFrameMainUser;
     procedure refresh1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure cxUserShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,9 +47,18 @@ var
 
 implementation
 
-uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg;
+uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg, UStartMain;
 
 {$R *.dfm}
+procedure TFormMain.cxUserShow(Sender: TObject);
+begin
+  //«¿œŒÀÕﬂ≈Ã »Õ‘Œ–Ã¿÷»ﬁ Œ œŒÀ‹«Œ¬¿“≈À≈
+  FrameMainUser.LbIDUser.Caption:=FormStartMain.IdUser;
+  FrameMainUser.LbLoginUser.Caption:=FormStartMain.DBCBReadLogin.Items[StrToInt(FormStartMain.IdUser)];
+  FrameMainUser.LbNameUser.Caption:=FormStartMain.DBCBName.Items[StrToInt(FormStartMain.IdUser)];
+  FrameMainUser.LbPasswordUser.Caption:=FormStartMain.DBCBReadPassword.Items[StrToInt(FormStartMain.IdUser)];
+end;
+
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   //œ”—“‹     ƒ≈–≈ “Œ–»» œ–Œ≈ “¿

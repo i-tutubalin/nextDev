@@ -19,15 +19,17 @@ uses
   dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
   dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue, StdCtrls, cxButtons;
+  dxSkinXmas2008Blue, StdCtrls, cxButtons, DBCtrls;
 
 type
   TFrameMainUser = class(TFrame)
     LbName: TLabel;
     LbLogin: TLabel;
     cxBtEditInfoUser: TcxButton;
+    LbIDUser: TLabel;
     LbLoginUser: TLabel;
     LbNameUser: TLabel;
+    LbPasswordUser: TLabel;
     procedure cxBtEditInfoUserClick(Sender: TObject);
   private
     { Private declarations }
@@ -37,7 +39,7 @@ type
 
 implementation
 
-uses UEditIndoUser;
+uses UEditIndoUser, UStartMain, MDBControl;
 
 {$R *.dfm}
 

@@ -30,6 +30,7 @@ type
     DBCBReadPassword: TDBComboBox;
     cxBtReadPassword: TcxButton;
     LbReadPassword: TLabel;
+    DBCBName: TDBComboBox;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cxBtReadPasswordClick(Sender: TObject);
@@ -38,6 +39,7 @@ type
     tempPassword:String;
     { Private declarations }
   public
+    IdUser:String;
     { Public declarations }
   end;
 
@@ -69,6 +71,8 @@ begin
     else password := false;
     if login and password then
     begin
+      //LoginUser := EditReadLogin.Text;
+      IdUser := IntToStr( i );
       FormMain.Enabled := true;
       FormMain.Visible := true;
       FormStartMain.Hide;
@@ -98,7 +102,7 @@ end;
 
 procedure TFormStartMain.FormCreate(Sender: TObject);
  var
-  login, password: String;
+  login, password, name: String;
   i: integer;
 begin
   FormMain.Enabled := false;
@@ -106,6 +110,7 @@ begin
   //«¿œŒÀÕﬂ≈Ã —œ»—Œ  œ–¿¬»À‹Õ€’ ÀŒ√»ÕŒ¬ » œ¿–ŒÀ≈…
   DBCBReadLogin.Items.Clear;
   DBCBReadPassword.Items.Clear;
+  DBCBName.Items.Clear;
   ModuleDBControl.QueryDev.First;
   for  i := 0 to ModuleDBControl.QueryDev.RecordCount - 1 do
   begin
@@ -113,6 +118,8 @@ begin
     DBCBReadLogin.AddItem(login, self);
     password := ModuleDBControl.QueryDev.FieldByName('password').AsString;
     DBCBReadPassword.AddItem(password, self);
+    name:= ModuleDBControl.QueryDev.FieldByName('name').AsString;
+    DBCBName.AddItem(name, self);
     ModuleDBControl.QueryDev.Next;
   end;
 end;
