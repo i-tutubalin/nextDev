@@ -11,7 +11,8 @@ uses
   UDeleteTask in 'task\UDeleteTask.pas' {FormDeleteTask},
   UStartMain in 'starProgramm\UStartMain.pas' {FormStartMain},
   FMainTask in 'task\FMainTask.pas' {FrameMainTask: TFrame},
-  MImg in 'module\MImg.pas' {ModuleImg: TDataModule};
+  MImg in 'module\MImg.pas' {ModuleImg: TDataModule},
+  FMainUser in 'FMainUser.pas' {FrameMainUser: TFrame};
 
 {$R *.res}
 

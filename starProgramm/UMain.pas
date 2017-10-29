@@ -21,7 +21,8 @@ uses
   dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, dxBarBuiltInMenu, cxGraphics,
-  cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxPC, FMainTask, ImgList;
+  cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxPC, FMainTask, ImgList,
+  FMainUser;
 
 type
   TFormMain = class(TForm)
@@ -30,6 +31,7 @@ type
     cxRecord: TcxTabSheet;
     cxUser: TcxTabSheet;
     FrameMainTask: TFrameMainTask;
+    FrameMainUser: TFrameMainUser;
     procedure refresh1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
