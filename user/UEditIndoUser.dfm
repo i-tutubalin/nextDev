@@ -96,7 +96,7 @@ object FormEditInfoUser: TFormEditInfoUser
   end
   object cxBtEditInfoUser: TcxButton
     Left = 8
-    Top = 279
+    Top = 285
     Width = 121
     Height = 25
     Caption = 'Edit information user'

@@ -71,8 +71,7 @@ begin
     else password := false;
     if login and password then
     begin
-      //LoginUser := EditReadLogin.Text;
-      IdUser := IntToStr( i );
+      IdUser := IntToStr(i);
       FormMain.Enabled := true;
       FormMain.Visible := true;
       FormStartMain.Hide;
@@ -91,8 +90,19 @@ end;
 procedure TFormStartMain.EditReadPasswordKeyPress(Sender: TObject;
   var Key: Char);
 begin
-  tempPassword:=tempPassword+key;
-  key:='*';
+  Case key of
+    #13://если введент enter
+      cxBtReadPasswordClick(self);
+    #8://если нажат backSpace
+    begin
+      delete(tempPassword, length(tempPassword), 1);
+    end
+    else
+    begin
+      tempPassword:=tempPassword+key;
+      key:='*';
+    end;
+  End;
 end;
 
 procedure TFormStartMain.FormClose(Sender: TObject; var Action: TCloseAction);

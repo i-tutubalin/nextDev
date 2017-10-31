@@ -70,8 +70,19 @@ end;
 procedure TFormDeleteTask.EditReadPasswordKeyPress(Sender: TObject;
   var Key: Char);
 begin
-  tempPassword:=tempPassword+key;
-  key:='*';
+  case key of
+    #13://если введент enter
+      cxBtReadPasswordClick(self);
+    #8://если нажат backSpace
+    begin
+      delete(tempPassword, length(tempPassword), 1);
+    end
+    else
+    begin
+      tempPassword:=tempPassword+key;
+      key:='*';
+    end;
+  end;
 end;
 
 procedure TFormDeleteTask.FormShow(Sender: TObject);
