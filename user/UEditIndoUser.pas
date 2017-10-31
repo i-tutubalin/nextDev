@@ -36,6 +36,7 @@ type
     EditOldPassword: TEdit;
     LbIncorrectPassword: TLabel;
     EditPasswordUser: TEdit;
+    LbIncorrectRepeatPassword: TLabel;
     procedure FormShow(Sender: TObject);
     procedure cxBtEditInfoUserClick(Sender: TObject);
   private
@@ -49,14 +50,30 @@ var
 
 implementation
 
-uses FMainUser, UMain, UStartMain, MImg;
+uses FMainUser, UMain, UStartMain, MImg, MDBControl;
 
 {$R *.dfm}
 
 procedure TFormEditInfoUser.cxBtEditInfoUserClick(Sender: TObject);
+var
+  i: integer;
 begin
   if EditOldPassword.Text = EditPasswordUser.Text then
   begin
+    ModuleDBControl.QueryDev.First;
+    for i := 0 to StrToInt(FormStartMain.IdUser) - 1 do
+      ModuleDBControl.QueryDev.Next;
+    ModuleDBControl.QueryDev.Edit;
+    ModuleDBControl.QueryDev.FieldByName('name').AsString := EditDev.Text;
+    ModuleDBControl.QueryDev.FieldByName('login').AsString := EditLogin.Text;
+    if (EditNewPassword.Text <> '') or (EditRepeatNewPassword.Text <> '') then
+    begin
+      if EditNewPassword.Text = EditRepeatNewPassword.Text then
+        ModuleDBControl.QueryDev.FieldByName('password').AsString := EditNewPassword.Text
+      else
+        LbIncorrectRepeatPassword.Visible := true;
+    end;
+    ModuleDBControl.QueryDev.Post;
     FormEditInfoUser.Close;
   end
   else
