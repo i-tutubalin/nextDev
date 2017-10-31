@@ -7,18 +7,18 @@ object FrameMainTask: TFrameMainTask
   TabOrder = 0
   object Splitter2: TSplitter
     Left = 0
-    Top = 362
+    Top = 255
     Width = 1042
     Height = 5
     Cursor = crVSplit
-    Align = alBottom
-    ExplicitTop = 364
+    Align = alTop
+    ExplicitTop = 90
   end
   object PanelFun: TPanel
     Left = 0
     Top = 0
     Width = 1042
-    Height = 153
+    Height = 105
     Align = alTop
     TabOrder = 0
     object LbSortStatus: TLabel
@@ -85,16 +85,16 @@ object FrameMainTask: TFrameMainTask
   end
   object PanelDev: TPanel
     Left = 0
-    Top = 153
+    Top = 105
     Width = 1042
-    Height = 209
-    Align = alClient
+    Height = 150
+    Align = alTop
     TabOrder = 1
     inline FrameRecordDev: TFrameRecordDev
       Left = 1
       Top = 1
       Width = 1040
-      Height = 207
+      Height = 148
       Align = alClient
       TabOrder = 0
       ExplicitLeft = 1
@@ -103,23 +103,26 @@ object FrameMainTask: TFrameMainTask
       ExplicitHeight = 207
       inherited DBGridDev: TDBGrid
         Width = 1040
-        Height = 207
+        Height = 270
+        Align = alTop
       end
     end
   end
   object PanelTask: TPanel
     Left = 0
-    Top = 367
+    Top = 260
     Width = 1042
-    Height = 300
-    Align = alBottom
+    Height = 407
+    Align = alClient
     PopupMenu = PMPanelTask
     TabOrder = 2
+    ExplicitTop = 267
+    ExplicitHeight = 400
     inline FrameRecordTask: TFrameRecordTask
       Left = 1
       Top = 1
       Width = 1040
-      Height = 298
+      Height = 405
       Align = alClient
       TabOrder = 0
       ExplicitLeft = 1
@@ -128,26 +131,26 @@ object FrameMainTask: TFrameMainTask
       ExplicitHeight = 298
       inherited Splitter1: TSplitter
         Left = 767
-        Height = 298
+        Height = 405
         ExplicitLeft = 757
         ExplicitTop = 0
         ExplicitHeight = 298
       end
       inherited DBGridTask: TDBGrid
         Width = 767
-        Height = 298
+        Height = 405
       end
       inherited DBMemoTask: TDBMemo
         Left = 770
-        Height = 298
+        Height = 405
         ExplicitLeft = 770
         ExplicitHeight = 298
       end
     end
   end
   object DBEditRelationsTableDevAndTask: TDBEdit
-    Left = 72
-    Top = 184
+    Left = 64
+    Top = 136
     Width = 121
     Height = 21
     DataField = 'id'
@@ -158,8 +161,8 @@ object FrameMainTask: TFrameMainTask
   end
   object PMMain: TPopupMenu
     Images = ModuleImg.ImageListMainTask
-    Left = 536
-    Top = 56
+    Left = 344
+    Top = 8
     object refresh1: TMenuItem
       Caption = 'refresh'
       ImageIndex = 3
@@ -168,8 +171,8 @@ object FrameMainTask: TFrameMainTask
   end
   object PMPanelTask: TPopupMenu
     Images = ModuleImg.ImageListMainTask
-    Left = 600
-    Top = 56
+    Left = 296
+    Top = 8
     object refresh2: TMenuItem
       Caption = 'refresh'
       ImageIndex = 3

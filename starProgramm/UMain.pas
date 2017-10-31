@@ -38,7 +38,7 @@ type
   private
     { Private declarations }
   public
-    path:string;
+    path:string; //осярэ й й депейрнпхх опнейрю
     { Public declarations }
   end;
 
@@ -52,7 +52,7 @@ uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg, UStartMain;
 {$R *.dfm}
 procedure TFormMain.cxUserShow(Sender: TObject);
 begin
-  //гюонкмъел хмтнплюжхч н онкэгнбюреке
+  //гюонкмъел хмтнплюжхч н онкэгнбюреке бньедьецн б яхярелс
   FrameMainUser.LbIDUser.Caption:=FormStartMain.IdUser;
   FrameMainUser.LbLoginUser.Caption:=FormStartMain.DBCBReadLogin.Items[StrToInt(FormStartMain.IdUser)];
   FrameMainUser.LbNameUser.Caption:=FormStartMain.DBCBName.Items[StrToInt(FormStartMain.IdUser)];
@@ -70,6 +70,7 @@ begin
   //намнбкемхе ад
   ModuleDBControl.QueryTask.Refresh;
   ModuleDBControl.QueryDev.Refresh;
+  ModuleDBControl.QueryRec.Refresh;
 end;
 
 end.

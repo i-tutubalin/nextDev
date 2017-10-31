@@ -66,11 +66,11 @@ object FormMain: TFormMain
         ExplicitHeight = 792
         inherited Splitter2: TSplitter
           Left = 3
-          Top = 484
+          Top = 436
           Width = 1129
           ExplicitLeft = 3
-          ExplicitTop = 356
-          ExplicitWidth = 1159
+          ExplicitTop = 93
+          ExplicitWidth = 1129
         end
         inherited PanelFun: TPanel
           Left = 3
@@ -83,7 +83,7 @@ object FormMain: TFormMain
         end
         inherited PanelDev: TPanel
           Left = 3
-          Top = 156
+          Top = 108
           Width = 1129
           Height = 328
           ExplicitLeft = 3
@@ -97,16 +97,17 @@ object FormMain: TFormMain
             ExplicitHeight = 326
             inherited DBGridDev: TDBGrid
               Width = 1127
-              Height = 326
+              Height = 389
             end
           end
         end
         inherited PanelTask: TPanel
           Left = 3
-          Top = 489
+          Top = 441
           Width = 1129
+          Height = 348
           ExplicitLeft = 3
-          ExplicitTop = 489
+          ExplicitTop = 441
           ExplicitWidth = 1129
           inherited FrameRecordTask: TFrameRecordTask
             Width = 1127

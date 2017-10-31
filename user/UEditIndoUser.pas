@@ -58,14 +58,18 @@ procedure TFormEditInfoUser.cxBtEditInfoUserClick(Sender: TObject);
 var
   i: integer;
 begin
+  //янупюмъел хглемеммсч хмтнплюжхч н онкэгнбюреке
+  //еякх онкэгнбюрекэ бепмн ббек оюпнкэ
   if EditOldPassword.Text = EditPasswordUser.Text then
   begin
     ModuleDBControl.QueryDev.First;
     for i := 0 to StrToInt(FormStartMain.IdUser) - 1 do
       ModuleDBControl.QueryDev.Next;
+
     ModuleDBControl.QueryDev.Edit;
     ModuleDBControl.QueryDev.FieldByName('name').AsString := EditDev.Text;
     ModuleDBControl.QueryDev.FieldByName('login').AsString := EditLogin.Text;
+
     if (EditNewPassword.Text <> '') or (EditRepeatNewPassword.Text <> '') then
     begin
       if EditNewPassword.Text = EditRepeatNewPassword.Text then
@@ -73,6 +77,7 @@ begin
       else
         LbIncorrectRepeatPassword.Visible := true;
     end;
+
     ModuleDBControl.QueryDev.Post;
     FormEditInfoUser.Close;
   end
@@ -84,7 +89,7 @@ end;
 
 procedure TFormEditInfoUser.FormShow(Sender: TObject);
 begin
-  //гюонкмъел хмтнплюжхч н онкэгнбюреке
+  //гюонкмъел хмтнплюжхч н онкэгнбюреке бньедьецн б яхярелс
   EditLogin.text:=FormStartMain.DBCBReadLogin.Items[StrToInt(FormStartMain.IdUser)];
   EditDev.text:=FormStartMain.DBCBName.Items[StrToInt(FormStartMain.IdUser)];
   EditPasswordUser.Text:=FormStartMain.DBCBReadPassword.Items[StrToInt(FormStartMain.IdUser)];

@@ -52,6 +52,7 @@ var
   passworld: String;
 begin
   //сдюкъер бшапюмсч гюохяэ опх опюбхкэмнл ббедемхх оюпнкъ
+  //б опнрхбмнл яксвюе нонбеыюел онкэгнбюрекъ врн оюпнкэ ме бепмши
   passworld := 'ОЮПНКЭ';
   if tempPassword = passworld then
   begin
@@ -70,15 +71,16 @@ end;
 procedure TFormDeleteTask.EditReadPasswordKeyPress(Sender: TObject;
   var Key: Char);
 begin
+  //опх ббедемхе яхлбнкнб б онке дкъ оюпнкъ
   case key of
-    #13://ЕЯКХ ББЕДЕМР enter
+    #13: //еякх ббедем ENTER
+         //бундхл б яхярелс
       cxBtReadPasswordClick(self);
-    #8://ЕЯКХ МЮФЮР backSpace
-    begin
+    #8: //еякх ббефем BACKSPACE
+        //сдюкъел онякефмхи ббедемши яхлбнк
       delete(tempPassword, length(tempPassword), 1);
-    end
-    else
-    begin
+    else //опх кчанл дпсцнл яхлбнке
+    begin//гюонлхмюел ецн х пхясел гбегднвйс б онке ббндю оюпнкъ
       tempPassword:=tempPassword+key;
       key:='*';
     end;

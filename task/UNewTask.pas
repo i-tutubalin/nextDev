@@ -112,8 +112,10 @@ begin
   begin
     name := ModuleDBControl.QueryDev.FieldByName('name').AsString;
     DBCBNameDev.AddItem(name, self);
+
     idName := ModuleDBControl.QueryDev.FieldByName('id').AsString;
     CBIdDev.AddItem(idName, self);
+
     ModuleDBControl.QueryDev.Next;
   end;
 end;

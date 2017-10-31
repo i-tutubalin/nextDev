@@ -2,12 +2,12 @@ object FrameRecordTask: TFrameRecordTask
   Left = 0
   Top = 0
   Width = 1200
-  Height = 300
+  Height = 400
   TabOrder = 0
   object Splitter1: TSplitter
     Left = 927
     Top = 0
-    Height = 300
+    Height = 400
     Align = alRight
     ExplicitLeft = 824
     ExplicitTop = 144
@@ -17,7 +17,7 @@ object FrameRecordTask: TFrameRecordTask
     Left = 0
     Top = 0
     Width = 927
-    Height = 300
+    Height = 400
     Align = alClient
     Color = clBtnFace
     DataSource = ModuleDBControl.DSTask
@@ -86,7 +86,7 @@ object FrameRecordTask: TFrameRecordTask
     Left = 930
     Top = 0
     Width = 270
-    Height = 300
+    Height = 400
     Align = alRight
     DataField = 'task'
     DataSource = ModuleDBControl.DSTask
@@ -98,6 +98,6 @@ object FrameRecordTask: TFrameRecordTask
     ParentFont = False
     ReadOnly = True
     TabOrder = 1
-    ExplicitLeft = 530
+    ExplicitHeight = 300
   end
 end

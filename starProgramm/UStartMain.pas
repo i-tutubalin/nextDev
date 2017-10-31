@@ -36,10 +36,10 @@ type
     procedure cxBtReadPasswordClick(Sender: TObject);
     procedure EditReadPasswordKeyPress(Sender: TObject; var Key: Char);
   private
-    tempPassword:String;
+    tempPassword:String; //оюпнкэ ббедемши онкэгнбюрекел
     { Private declarations }
   public
-    IdUser:String;
+    IdUser:String; //ID онкэгнбюрекъ бньедьецн б яхярелс
     { Public declarations }
   end;
 
@@ -53,24 +53,18 @@ uses MDBControl, UMain, UDownload, MImg;
 {$R *.dfm}
 
 procedure TFormStartMain.cxBtReadPasswordClick(Sender: TObject);
-  var
-    login: boolean;
-    password: boolean;
+var
     i: integer;
 begin
   //опнбепъел опюбкэмнярэ ббедемнцн кнцхмю х оюпнкъ
-  login := false;
-  password := false;
   for  i := 0 to ModuleDBControl.QueryDev.RecordCount - 1 do
   begin
-    if  EditReadLogin.Text = DBCBReadLogin.items[i] then
-      login := true
-    else login := false;
-    if tempPassword = DBCBReadPassword.Items[i] then
-      password := true
-    else password := false;
-    if login and password then
+    //еякх оюпнкэ х кнцхм йнпейрем
+    if (EditReadLogin.Text = DBCBReadLogin.items[i]) and
+       (tempPassword = DBCBReadPassword.Items[i]) then
     begin
+      //гюонлхмюер ID онкэгнбюрекъ
+      //х бундхл б бяхярелс
       IdUser := IntToStr(i);
       FormMain.Enabled := true;
       FormMain.Visible := true;
@@ -79,10 +73,12 @@ begin
     end
     else
     begin
+      //нонбеыюел онкэгнбюрекъ врн оюпнкэ ме бепмши
       LbReadPassword.Font.Color := clRed;
       LbReadPassword.Caption := 'Wrong password. Try again.';
     end;
   end;
+  //яапюяшбюер ббедемши онкэгнбюрекел оюпнкэ
   EditReadPassword.Text := '';
   tempPassword:='';
 end;
@@ -90,19 +86,20 @@ end;
 procedure TFormStartMain.EditReadPasswordKeyPress(Sender: TObject;
   var Key: Char);
 begin
-  Case key of
-    #13://ЕЯКХ ББЕДЕМР enter
+  //опх ббедемхе яхлбнкнб б онке дкъ оюпнкъ
+  case key of
+    #13: //еякх ббедем ENTER
+         //бундхл б яхярелс
       cxBtReadPasswordClick(self);
-    #8://ЕЯКХ МЮФЮР backSpace
-    begin
+    #8: //еякх ббефем BACKSPACE
+        //сдюкъел онякефмхи ббедемши яхлбнк
       delete(tempPassword, length(tempPassword), 1);
-    end
-    else
-    begin
+    else //опх кчанл дпсцнл яхлбнке
+    begin//гюонлхмюел ецн х пхясел гбегднвйс б онке ббндю оюпнкъ
       tempPassword:=tempPassword+key;
       key:='*';
     end;
-  End;
+  end;
 end;
 
 procedure TFormStartMain.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -115,21 +112,25 @@ procedure TFormStartMain.FormCreate(Sender: TObject);
   login, password, name: String;
   i: integer;
 begin
+  //акнйхпсел нямнбмсч тнплс
   FormMain.Enabled := false;
-  FormMain.Visible := false;
-  //гюонкмъел яохянй опюбхкэмшу кнцхмнб х оюпнкеи
+  //вхярхл йнпнайх дкъ дюммшу я ад
   DBCBReadLogin.Items.Clear;
   DBCBReadPassword.Items.Clear;
   DBCBName.Items.Clear;
+  //гюонкмъел яохянй бяеу хлем,кнцхмнб х оюпнкеи хг ад
   ModuleDBControl.QueryDev.First;
   for  i := 0 to ModuleDBControl.QueryDev.RecordCount - 1 do
   begin
     login := ModuleDBControl.QueryDev.FieldByName('login').AsString;
     DBCBReadLogin.AddItem(login, self);
+
     password := ModuleDBControl.QueryDev.FieldByName('password').AsString;
     DBCBReadPassword.AddItem(password, self);
+
     name:= ModuleDBControl.QueryDev.FieldByName('name').AsString;
     DBCBName.AddItem(name, self);
+
     ModuleDBControl.QueryDev.Next;
   end;
 end;

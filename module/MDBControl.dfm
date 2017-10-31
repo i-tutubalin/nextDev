@@ -125,7 +125,7 @@ object ModuleDBControl: TModuleDBControl
       Size = 255
     end
   end
-  object DataSource1: TDataSource
+  object DSRec: TDataSource
     DataSet = QueryRec
     Left = 144
     Top = 160

@@ -20,7 +20,7 @@ uses
   dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
   dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue, cxButtons;
+  dxSkinXmas2008Blue, cxButtons, cxClasses, cxPropertiesStore;
 
 type
   TFrameMainTask = class(TFrame)
@@ -65,7 +65,7 @@ uses MDBControl, UDeleteTask, UNewTask, MImg, UMain;
 procedure TFrameMainTask.CBSortStatusChange(Sender: TObject);
 var statusNew:string;
 begin
-  //янпрхбпнйю он ярюрсяс
+  //янпрхбпнйю он ярюрсяс гюдюмхъ
   statusNew:= QuotedStr(CBSortStatus.Text);
   with ModuleDBControl.QueryTask do
   begin
@@ -81,20 +81,20 @@ end;
 
 procedure TFrameMainTask.cxBtAddRecordClick(Sender: TObject);
 begin
-  //днаюбкъел б рюакхжш мнбше гюохях
+  //днаюбкъел б рюакхжс гюдюмхи мнбше гюохях
   ModuleDBControl.QueryTask.Append;
   FormNewTask.Show;
 end;
 
 procedure TFrameMainTask.cxBtDeleteRecordClick(Sender: TObject);
 begin
-  //сдюкъер бшапюмсч гюохяэ
+  //сдюкъер бшапюмсч гюохяэ хг рюакхжш гюдюмхи
   FormDeleteTask.ShowModal;
 end;
 
 procedure TFrameMainTask.cxBtEditRecordClick(Sender: TObject);
 begin
-  //хглемъел дюммше гюохях
+  //хглемъел дюммше гюохях б рюакхже гюдюмхи
   FormNewTask.Show;
 end;
 
@@ -123,8 +123,8 @@ end;
 
 procedure TFrameMainTask.refreshClick(Sender: TObject);
 begin
-  ModuleDBControl.QueryTask.Refresh;
-  ModuleDBControl.QueryDev.Refresh;
+  //намнбкемхе ад
+  FormMain.refresh1Click(self);
 end;
 
 end.

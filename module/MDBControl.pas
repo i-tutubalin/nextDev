@@ -26,7 +26,7 @@ type
     QueryDevlogin: TWideStringField;
     QueryDevpassword: TWideStringField;
     QueryRec: TADOQuery;
-    DataSource1: TDataSource;
+    DSRec: TDataSource;
     QueryRecid: TAutoIncField;
     QueryRecnameRecord: TWideStringField;
     QueryRecrecord: TWideStringField;
@@ -50,7 +50,9 @@ uses UMain;
 
 procedure TModuleDBControl.DataModuleCreate(Sender: TObject);
 begin
-  //ондйкчвемхе й ад
+  {*ондйкчвемхе йн бяел ад дхмюлхвеяйх
+  **рн еярэ он осрх ../ад/Database1.mdb
+  *}
   QueryDev.Active:=false;
   QueryTask.Active:=false;
   QueryRec.Active:=false;

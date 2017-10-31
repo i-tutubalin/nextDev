@@ -45,6 +45,7 @@ uses UEditIndoUser, UStartMain, MDBControl, MImg;
 
 procedure TFrameMainUser.cxBtEditInfoUserClick(Sender: TObject);
 begin
+  //хглемъел хмтнплюжхч н онкэгнбюреке
   FormEditInfoUser.Show;
 end;
 
