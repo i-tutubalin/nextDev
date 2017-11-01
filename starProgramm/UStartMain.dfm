@@ -40,6 +40,7 @@ object FormStartMain: TFormStartMain
     Height = 31
     Alignment = taCenter
     TabOrder = 1
+    OnKeyPress = EditReadLoginKeyPress
   end
   object DBCBReadLogin: TDBComboBox
     Left = 1
