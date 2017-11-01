@@ -35,6 +35,7 @@ type
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure cxBtReadPasswordClick(Sender: TObject);
     procedure EditReadPasswordKeyPress(Sender: TObject; var Key: Char);
+    procedure EditReadLoginKeyPress(Sender: TObject; var Key: Char);
   private
     tempPassword:String; //оюпнкэ ббедемши онкэгнбюрекел
     { Private declarations }
@@ -81,6 +82,15 @@ begin
   //яапюяшбюер ббедемши онкэгнбюрекел оюпнкэ
   EditReadPassword.Text := '';
   tempPassword:='';
+end;
+
+procedure TFormStartMain.EditReadLoginKeyPress(Sender: TObject; var Key: Char);
+begin
+  case key of
+    #13: //еякх ббедем ENTER
+         //оепеундхл б онке ббндю оюпнкъ
+      EditReadPassword.setfocus;
+  end;
 end;
 
 procedure TFormStartMain.EditReadPasswordKeyPress(Sender: TObject;
