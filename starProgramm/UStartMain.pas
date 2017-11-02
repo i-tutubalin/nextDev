@@ -122,6 +122,9 @@ procedure TFormStartMain.FormCreate(Sender: TObject);
   login, password, name: String;
   i: integer;
 begin
+  //опх ярюпре опнцпюллш
+  //ярюбхр йспянп б онке ббндю кнцхмю
+  EditReadLogin.setfocus;
   //акнйхпсел нямнбмсч тнплс
   FormMain.Enabled := false;
   //вхярхл йнпнайх дкъ дюммшу я ад
