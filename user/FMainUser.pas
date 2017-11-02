@@ -19,18 +19,33 @@ uses
   dxSkinSummer2008, dxSkinTheAsphaltWorld, dxSkinsDefaultPainters,
   dxSkinValentine, dxSkinVisualStudio2013Blue, dxSkinVisualStudio2013Dark,
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
-  dxSkinXmas2008Blue, StdCtrls, cxButtons, DBCtrls;
+  dxSkinXmas2008Blue, StdCtrls, cxButtons, DBCtrls, ExtCtrls, cxControls,
+  cxContainer, cxEdit, cxTextEdit, cxMemo, ExtDlgs;
 
 type
   TFrameMainUser = class(TFrame)
     LbName: TLabel;
     LbLogin: TLabel;
-    cxBtEditInfoUser: TcxButton;
     LbIDUser: TLabel;
-    LbLoginUser: TLabel;
-    LbNameUser: TLabel;
     LbPasswordUser: TLabel;
+    LbNewPassword: TLabel;
+    LbRepeatNewPassword: TLabel;
+    LbOldPassword: TLabel;
+    LbIncorrectPassword: TLabel;
+    LbIncorrectRepeatPassword: TLabel;
+    EditDev: TEdit;
+    EditLogin: TEdit;
+    cxBtEditInfoUser: TcxButton;
+    EditNewPassword: TEdit;
+    EditRepeatNewPassword: TEdit;
+    EditOldPassword: TEdit;
+    ImageAvatarUser: TImage;
+    OpenPictureDialogAvatar: TOpenPictureDialog;
+    cxMemoPathAvatarUser: TcxMemo;
+    LbPathAvatarUser: TLabel;
+    cxBtPathAvatarUser: TcxButton;
     procedure cxBtEditInfoUserClick(Sender: TObject);
+    procedure cxBtPathAvatarUserClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,14 +54,57 @@ type
 
 implementation
 
-uses UEditIndoUser, UStartMain, MDBControl, MImg;
+uses UStartMain, MDBControl, MImg, UMain;
 
 {$R *.dfm}
 
 procedure TFrameMainUser.cxBtEditInfoUserClick(Sender: TObject);
+var
+  i: integer;
 begin
-  //»«Ã≈Õﬂ≈Ã »Õ‘Œ–Ã¿÷»ﬁ Œ œŒÀ‹«Œ¬¿“≈À≈
-  FormEditInfoUser.Show;
+  //—Œ’–¿Õﬂ≈Ã »«Ã≈Õ≈ÕÕ”ﬁ »Õ‘Œ–Ã¿÷»ﬁ Œ œŒÀ‹«Œ¬¿“≈À≈
+  //≈—À» œŒÀ‹«Œ¬¿“≈À‹ ¬≈–ÕŒ ¬¬≈À œ¿–ŒÀ‹
+  if EditOldPassword.Text = LbPasswordUser.Caption then
+  begin
+    ModuleDBControl.QueryDev.First;
+    for i := 0 to StrToInt(FormStartMain.IdUser) - 1 do
+      ModuleDBControl.QueryDev.Next;
+
+    ModuleDBControl.QueryDev.Edit;
+    ModuleDBControl.QueryDev.FieldByName('name').AsString := EditDev.Text;
+    ModuleDBControl.QueryDev.FieldByName('login').AsString := EditLogin.Text;
+    ModuleDBControl.QueryDev.FieldByName('avatar').AsString := cxMemoPathAvatarUser.Text;
+    if (EditNewPassword.Text <> '') or (EditRepeatNewPassword.Text <> '') then
+    begin
+      if EditNewPassword.Text = EditRepeatNewPassword.Text then
+        ModuleDBControl.QueryDev.FieldByName('password').AsString := EditNewPassword.Text
+      else
+        LbIncorrectRepeatPassword.Visible := true;
+    end;
+    ModuleDBControl.QueryDev.Post;
+    FormMain.cxUserShow(self);
+  end
+  else
+  begin
+    LbIncorrectPassword.Visible := true;
+  end;
+  EditNewPassword.Text:='';
+  EditRepeatNewPassword.Text:='';
+  EditOldPassword.Text:='';
+end;
+
+procedure TFrameMainUser.cxBtPathAvatarUserClick(Sender: TObject);
+var
+  i: integer;
+  avatar: String;
+begin
+  //«¿√–”∆¿≈Ã ¿¬¿“¿– œŒÀ‹«Œ¬¿“≈Àﬂ
+  ModuleDBControl.QueryDev.First;
+  for i := 0 to StrToInt(FormStartMain.IdUser) - 1 do
+    ModuleDBControl.QueryDev.Next;
+  if OpenPictureDialogAvatar.Execute then
+    cxMemoPathAvatarUser.Text:=OpenPictureDialogAvatar.FileName;
+  ImageAvatarUser.Picture.LoadFromFile(cxMemoPathAvatarUser.Text);
 end;
 
 end.

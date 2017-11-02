@@ -75,12 +75,4 @@ object FormStartMain: TFormStartMain
     TabOrder = 4
     OnClick = cxBtReadPasswordClick
   end
-  object DBCBName: TDBComboBox
-    Left = 1
-    Top = 122
-    Width = 73
-    Height = 31
-    TabOrder = 5
-    Visible = False
-  end
 end

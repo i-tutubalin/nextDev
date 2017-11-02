@@ -92,6 +92,10 @@ object ModuleDBControl: TModuleDBControl
       FieldName = 'password'
       Size = 255
     end
+    object QueryDevavatar: TWideStringField
+      FieldName = 'avatar'
+      Size = 255
+    end
   end
   object QueryRec: TADOQuery
     Connection = ConDBNextDev

@@ -92,6 +92,8 @@
     <Transaction>2017.10.29 21:02:35.089.dfm,E:\Документы\nextDev.git\UEditIndoUser.dfm=E:\Документы\nextDev.git\user\UEditIndoUser.dfm</Transaction>
     <Transaction>2017.10.29 21:02:42.696.pas,E:\Документы\nextDev.git\FMainUser.pas=E:\Документы\nextDev.git\user\FMainUser.pas</Transaction>
     <Transaction>2017.10.29 21:02:42.696.dfm,E:\Документы\nextDev.git\FMainUser.dfm=E:\Документы\nextDev.git\user\FMainUser.dfm</Transaction>
+    <Transaction>2017.11.02 11:28:11.212.pas,E:\Документы\nextDev\user\UEditIndoUser.pas=</Transaction>
+    <Transaction>2017.11.02 11:28:11.212.dfm,E:\Документы\nextDev\user\UEditIndoUser.dfm=</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="module"/>
@@ -114,8 +116,6 @@
     <File Path="user"/>
     <File Path="user\FMainUser.pas"/>
     <File Path="user\FMainUser.dfm"/>
-    <File Path="user\UEditIndoUser.pas"/>
-    <File Path="user\UEditIndoUser.dfm"/>
     <File Path="FRecordDev.pas"/>
     <File Path="FRecordDev.dfm"/>
     <File Path="FRecordTask.pas"/>

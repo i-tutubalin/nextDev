@@ -32,6 +32,7 @@ type
     QueryRecrecord: TWideStringField;
     QueryRecidDev: TIntegerField;
     QueryRecnameDev: TWideStringField;
+    QueryDevavatar: TWideStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

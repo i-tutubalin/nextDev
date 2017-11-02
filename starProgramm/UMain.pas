@@ -51,12 +51,30 @@ uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg, UStartMain;
 
 {$R *.dfm}
 procedure TFormMain.cxUserShow(Sender: TObject);
+var
+  i:integer;
 begin
   //гюонкмъел хмтнплюжхч н онкэгнбюреке бньедьецн б яхярелс
-  FrameMainUser.LbIDUser.Caption:=FormStartMain.IdUser;
-  FrameMainUser.LbLoginUser.Caption:=FormStartMain.DBCBReadLogin.Items[StrToInt(FormStartMain.IdUser)];
-  FrameMainUser.LbNameUser.Caption:=FormStartMain.DBCBName.Items[StrToInt(FormStartMain.IdUser)];
-  FrameMainUser.LbPasswordUser.Caption:=FormStartMain.DBCBReadPassword.Items[StrToInt(FormStartMain.IdUser)];
+  with FrameMainUser do
+  begin
+    LbIDUser.Caption:=FormStartMain.IdUser;
+    ModuleDBControl.QueryDev.First;
+    for i := 0 to StrToInt(FormStartMain.IdUser) - 1 do
+      ModuleDBControl.QueryDev.Next;
+    EditDev.Text:=ModuleDBControl.QueryDev.FieldByName('name').AsString;
+    EditLogin.Text:=ModuleDBControl.QueryDev.FieldByName('login').AsString;
+    LbPasswordUser.Caption:=ModuleDBControl.QueryDev.FieldByName('password').AsString;
+
+    cxMemoPathAvatarUser.Text:=ModuleDBControl.QueryDev.FieldByName('avatar').AsString;
+    if cxMemoPathAvatarUser.Text = '' then
+      ImageAvatarUser.Picture.LoadFromFile(path + 'ХЙНМЙХ\dev.jpg')
+    else
+      ImageAvatarUser.Picture.LoadFromFile(cxMemoPathAvatarUser.Text);
+
+    //саепюел опедсопефдемхе на ньхайюу
+    LbIncorrectPassword.Visible:=false;
+    LbIncorrectRepeatPassword.Visible:=false;
+  end;
 end;
 
 procedure TFormMain.FormCreate(Sender: TObject);

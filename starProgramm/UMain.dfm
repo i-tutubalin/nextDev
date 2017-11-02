@@ -87,7 +87,7 @@ object FormMain: TFormMain
           Width = 1129
           Height = 328
           ExplicitLeft = 3
-          ExplicitTop = 156
+          ExplicitTop = 108
           ExplicitWidth = 1129
           ExplicitHeight = 328
           inherited FrameRecordDev: TFrameRecordDev
@@ -109,19 +109,27 @@ object FormMain: TFormMain
           ExplicitLeft = 3
           ExplicitTop = 441
           ExplicitWidth = 1129
+          ExplicitHeight = 348
           inherited FrameRecordTask: TFrameRecordTask
             Width = 1127
+            Height = 346
             ExplicitWidth = 1127
+            ExplicitHeight = 346
             inherited Splitter1: TSplitter
               Left = 854
-              ExplicitLeft = 884
+              Height = 346
+              ExplicitLeft = 854
+              ExplicitHeight = 346
             end
             inherited DBGridTask: TDBGrid
               Width = 854
+              Height = 346
             end
             inherited DBMemoTask: TDBMemo
               Left = 857
+              Height = 346
               ExplicitLeft = 857
+              ExplicitHeight = 346
             end
           end
         end
@@ -133,6 +141,10 @@ object FormMain: TFormMain
     object cxRecord: TcxTabSheet
       Caption = 'Record'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
     end
     object cxUser: TcxTabSheet
       Caption = 'User'
@@ -165,23 +177,41 @@ object FormMain: TFormMain
           ExplicitWidth = 66
           ExplicitHeight = 19
         end
-        inherited LbLoginUser: TLabel
-          Width = 88
-          Height = 19
-          ExplicitWidth = 88
-          ExplicitHeight = 19
-        end
-        inherited LbNameUser: TLabel
-          Width = 90
-          Height = 19
-          ExplicitWidth = 90
-          ExplicitHeight = 19
-        end
         inherited LbPasswordUser: TLabel
           Width = 116
           Height = 19
           ExplicitWidth = 116
           ExplicitHeight = 19
+        end
+        inherited LbNewPassword: TLabel
+          Width = 103
+          Height = 19
+          ExplicitWidth = 103
+          ExplicitHeight = 19
+        end
+        inherited LbRepeatNewPassword: TLabel
+          Width = 154
+          Height = 19
+          ExplicitWidth = 154
+          ExplicitHeight = 19
+        end
+        inherited LbOldPassword: TLabel
+          Width = 163
+          Height = 19
+          ExplicitWidth = 163
+          ExplicitHeight = 19
+        end
+        inherited LbPathAvatarUser: TLabel
+          Width = 114
+          Height = 19
+          ExplicitWidth = 114
+          ExplicitHeight = 19
+        end
+        inherited cxMemoPathAvatarUser: TcxMemo
+          Lines.Strings = (
+            'cxMemoPathAvatar'
+            'U'
+            'ser')
         end
       end
     end
