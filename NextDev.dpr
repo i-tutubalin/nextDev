@@ -12,7 +12,9 @@ uses
   UStartMain in 'starProgramm\UStartMain.pas' {FormStartMain},
   FMainTask in 'task\FMainTask.pas' {FrameMainTask: TFrame},
   MImg in 'module\MImg.pas' {ModuleImg: TDataModule},
-  FMainUser in 'user\FMainUser.pas' {FrameMainUser: TFrame};
+  FMainUser in 'user\FMainUser.pas' {FrameMainUser: TFrame},
+  FRecordRecord in 'FRecordRecord.pas' {FrameRecordRecord: TFrame},
+  FMainRecord in 'record\FMainRecord.pas' {FrameMainRecord: TFrame};
 
 {$R *.res}
 

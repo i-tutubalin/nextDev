@@ -22,7 +22,7 @@ uses
   dxSkinVisualStudio2013Light, dxSkinVS2010, dxSkinWhiteprint,
   dxSkinXmas2008Blue, dxSkinscxPCPainter, dxBarBuiltInMenu, cxGraphics,
   cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxPC, FMainTask, ImgList,
-  FMainUser;
+  FMainUser, FMainRecord;
 
 type
   TFormMain = class(TForm)
@@ -32,9 +32,13 @@ type
     cxUser: TcxTabSheet;
     FrameMainTask: TFrameMainTask;
     FrameMainUser: TFrameMainUser;
+    FrameMainRecord: TFrameMainRecord;
     procedure refresh1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure cxUserShow(Sender: TObject);
+    procedure cxRecordShow(Sender: TObject);
+    procedure cxRecordClick(Sender: TObject);
+    procedure cxMainTaskShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,6 +54,42 @@ implementation
 uses UDownload, MDBControl, UNewTask, UDeleteTask, MImg, UStartMain;
 
 {$R *.dfm}
+procedure TFormMain.cxMainTaskShow(Sender: TObject);
+begin
+  //ÑÂßÇÛÂÀÍÈÅ ÄÂÓÕ ÒÀÁËÈÖ(dev è task) ×ÅĞÅÇ ÊÎÑÒÛËÜ
+  FrameMainTask.DBEditRelationsTableDevAndTaskChange(Sender);
+end;
+
+procedure TFormMain.cxRecordClick(Sender: TObject);
+begin
+ //ÏÎÊÀÇÛÂÀÅÌ ÂÑÅ ÇÀÄÀÍÈß
+  //ÏÎÊÀÇÛÂÀÅÌ ÂÑÅ ÇÀÏÈÑÈ ÏÎËÜÇÎÂÀÒÅËß
+  cxRecordShow(self);
+end;
+
+procedure TFormMain.cxRecordShow(Sender: TObject);
+var
+  idUser: String;
+begin
+  //ÏÎÊÀÇÛÂÀÅÌ ÂÑÅ ÇÀÄÀÍÈß
+  ModuleDBControl.QueryTask.SQL.Clear;
+  ModuleDBControl.QueryTask.SQL.Text:=
+        'Select t.* ' +
+        'From task t ';
+  ModuleDBControl.QueryTask.Open;
+
+  //ÏÎÊÀÇÛÂÀÅÌ ÂÑÅ ÇÀÏÈÑÈ ÏÎËÜÇÎÂÀÒÅËß
+  idUser:='1';
+  if FormStartMain.IdUser <> '' then
+    idUser:= IntToStr(StrToInt(FormStartMain.IdUser) + 1);
+  ModuleDBControl.QueryRec.SQL.Clear;
+  ModuleDBControl.QueryRec.SQL.Text:=
+        'Select r.* ' +
+        'From record r ' +
+        'Where idDev = ' + idUser;
+  ModuleDBControl.QueryRec.Open;
+end;
+
 procedure TFormMain.cxUserShow(Sender: TObject);
 var
   i:integer;

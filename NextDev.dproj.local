@@ -101,6 +101,9 @@
     <File Path="module\MDBControl.dfm"/>
     <File Path="module\MImg.pas"/>
     <File Path="module\MImg.dfm"/>
+    <File Path="record"/>
+    <File Path="record\FMainRecord.pas"/>
+    <File Path="record\FMainRecord.dfm"/>
     <File Path="starProgramm"/>
     <File Path="starProgramm\UMain.pas"/>
     <File Path="starProgramm\UMain.dfm"/>
@@ -122,5 +125,7 @@
     <File Path="FRecordTask.dfm"/>
     <File Path="UDownload.pas"/>
     <File Path="UDownload.dfm"/>
+    <File Path="FRecordRecord.pas"/>
+    <File Path="FRecordRecord.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

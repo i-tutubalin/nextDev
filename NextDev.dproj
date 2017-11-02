@@ -83,6 +83,14 @@
 				<Form>FrameMainUser</Form>
 				<DesignClass>TFrame</DesignClass>
 			</DCCReference>
+			<DCCReference Include="FRecordRecord.pas">
+				<Form>FrameRecordRecord</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
+			<DCCReference Include="record\FMainRecord.pas">
+				<Form>FrameMainRecord</Form>
+				<DesignClass>TFrame</DesignClass>
+			</DCCReference>
 			<BuildConfiguration Include="Base">
 				<Key>Base</Key>
 			</BuildConfiguration>

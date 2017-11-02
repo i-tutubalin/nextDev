@@ -50,6 +50,7 @@ object FormMain: TFormMain
       Font.Style = []
       ImageIndex = 2
       ParentFont = False
+      OnShow = cxMainTaskShow
       inline FrameMainTask: TFrameMainTask
         Left = 0
         Top = 0
@@ -141,10 +142,67 @@ object FormMain: TFormMain
     object cxRecord: TcxTabSheet
       Caption = 'Record'
       ImageIndex = 1
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
+      OnClick = cxRecordClick
+      OnShow = cxRecordShow
+      inline FrameMainRecord: TFrameMainRecord
+        Left = 0
+        Top = 0
+        Width = 1135
+        Height = 792
+        Align = alClient
+        TabOrder = 0
+        ExplicitWidth = 1135
+        ExplicitHeight = 792
+        inherited PanelRecord: TPanel
+          Width = 1135
+          Height = 692
+          ExplicitWidth = 1135
+          ExplicitHeight = 692
+          inherited FrameRecordRecord: TFrameRecordRecord
+            Width = 1133
+            Height = 690
+            ExplicitWidth = 1133
+            ExplicitHeight = 690
+            inherited PanelAllTask: TPanel
+              Top = 520
+              Width = 1133
+              ExplicitTop = 520
+              ExplicitWidth = 1133
+              inherited DBGridAllTask: TDBGrid
+                Width = 946
+                TitleFont.Height = -16
+              end
+              inherited DBMemoTask: TDBMemo
+                Left = 947
+                ExplicitLeft = 947
+                ExplicitTop = 1
+                ExplicitHeight = 168
+              end
+            end
+            inherited PanelRecord: TPanel
+              Width = 1133
+              Height = 520
+              ExplicitWidth = 1133
+              ExplicitHeight = 520
+              inherited DBMemoRecord: TDBMemo
+                Left = 947
+                Height = 518
+                ExplicitLeft = 947
+                ExplicitHeight = 518
+              end
+              inherited DBGridRecord: TDBGrid
+                Width = 946
+                Height = 518
+                TitleFont.Height = -16
+              end
+            end
+          end
+        end
+        inherited PanelFun: TPanel
+          Width = 1135
+          ExplicitWidth = 1135
+        end
+      end
     end
     object cxUser: TcxTabSheet
       Caption = 'User'
@@ -206,6 +264,26 @@ object FormMain: TFormMain
           Height = 19
           ExplicitWidth = 114
           ExplicitHeight = 19
+        end
+        inherited EditDev: TEdit
+          Height = 27
+          ExplicitHeight = 27
+        end
+        inherited EditLogin: TEdit
+          Height = 27
+          ExplicitHeight = 27
+        end
+        inherited EditNewPassword: TEdit
+          Height = 27
+          ExplicitHeight = 27
+        end
+        inherited EditRepeatNewPassword: TEdit
+          Height = 27
+          ExplicitHeight = 27
+        end
+        inherited EditOldPassword: TEdit
+          Height = 27
+          ExplicitHeight = 27
         end
         inherited cxMemoPathAvatarUser: TcxMemo
           Lines.Strings = (
